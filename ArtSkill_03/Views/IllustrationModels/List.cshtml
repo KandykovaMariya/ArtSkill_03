@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ArtSkill_03.Models.IllustrationModel>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <h1>Каталог</h1>
+    <div class="row mt-5 mb-2">
+    @{
+        foreach( var illustrationModel in Model)
+        {
+            <div class=col-lg-4>
+            <img class="img-thumbnail" src="@illustrationModel.img" alt="@illustrationModel.Name"/>
+                <h2>@illustrationModel.Name</h2>
+                <p>@illustrationModel.shortDesc</p>
+                <p> @illustrationModel.Price.ToString("c")</p>
+                <p><a asp-controller="ArtSkill" asp-action="Welcome">Back to List</a></p>
+                 
+                <p><input type="submit" value="Detail" class="btn btn-primary" /></p>
+            </div>
+        }
+    }
+    </div>
+</body>
+</html>
+
+
+
+
+
+
